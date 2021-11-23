@@ -13,9 +13,17 @@ class LinkedList:
 			node=node.next
 		print(node.data)
 
-	def insert_begining
+	def push(self, value):
+		'''Function to insert a new node at the beginning'''
+	#achei que precisaria testar se o head era vazio, mas caso fosse nao teria problema colocar None com o
+	#next do new_node logo nao precisa testar pra saber se o head é None.
+		new_node = Node(value)
+		new_node.next = self.head
+		self.head = new_node
+
+	
 # Falta implementar os métodos de adicao de nos
-# 1 - no inicio da lista
+# 1 - no inicio da lista - ok
 # 2 - depois de um no específico
 # 3 - no final da lista
 
@@ -39,3 +47,7 @@ if __name__ == '__main__':
 
 	llist.print_list()
 
+	llist.push(21)
+
+	llist.print_list()
+	
