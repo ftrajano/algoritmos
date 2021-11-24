@@ -21,6 +21,15 @@ class LinkedList:
 		new_node.next = self.head
 		self.head = new_node
 
+	def insertAfter(self, prev_node, value):
+		'''Given a prev_node, insert a new node after the given'''
+		#precisa testar se o nó dado é None?
+		#Pra mim não precisaria
+		new_node = Node(value)
+		new_node.next = prev_node.next
+		prev_node.next = new_node 
+		
+
 	
 # Falta implementar os métodos de adicao de nos
 # 1 - no inicio da lista - ok
@@ -31,23 +40,15 @@ class LinkedList:
 if __name__ == '__main__':
 
 	#Startr with the empty list
+	
 	llist = LinkedList()
 	llist.head = Node(1)
-
 	second = Node(2)
 	third = Node(3)
-	
-
 	llist.head.next = second
 	second.next = third
-
-	llist.print_list()
-
 	third.data = 5
-
-	llist.print_list()
-
 	llist.push(21)
-
+	llist.insertAfter(second, 10)
 	llist.print_list()
 	
